@@ -43,8 +43,47 @@ class TestTuyaDevice(unittest.TestCase):
         pprint(response)
         self.assertEqual(True, True)
 
+    def test_get_timers(self):
+        device = TuyaDevice()
+        device_id = power_strip_devices[1]["id"]
+        response = device.get_device_timers(device_id)
+        pprint(response)
+        self.assertEqual(True, True)
+
+    def test_delete_timers(self):
+        device = TuyaDevice()
+        device_id = power_strip_devices[1]["id"]
+        response = device.delete_all_timers(device_id)
+        pprint(response)
+        self.assertEqual(True, True)
+
+    def test_create_timer(self):
+        device = TuyaDevice()
+        device_id = power_strip_devices[1]["id"]
+        response = device.create_timer(device_id, "06:00")
+        pprint(response)
+        self.assertEqual(True, True)
+
+    # def test_delete_timer_category(self):
+    #     device = TuyaDevice()
+    #     device_id = power_strip_devices[1]["id"]
+    #     response = device.delete_timer_category(device_id, "test")
+    #     pprint(response)
+    #     self.assertEqual(True, True)
+
+    def test_set_rise_garden_schedule(self):
+        device = TuyaDevice()
+        device_id = power_strip_devices[1]["id"]
+        response = device.create_rise_garden_timer(device_id, "07:00", 60*16)
+        pprint(response)
+
+        response = device.get_device_timers(device_id)
+        pprint(response)
+
+        self.assertEqual(True, True)
+
     # TODO:
-    #  - Figure out light schedule: get and set
+    #  - Get schedule to show up in Tuya app
     #  - Create function to turn off all switches at once
 
 

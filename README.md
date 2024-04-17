@@ -5,7 +5,13 @@ It is not very active... so a bit suspect, but seems to work at the basic level
 
 
 TODO:
+Timers
+- Array of categories (I think this will something like a group of schedules for a device component (i.e. switch)
+- - groups, the actual timer schedules - on/off(function) triggers
+- - - timer def (name, date, loops, order in group, status time, dimer_id, timezone, function (on/off switch)
 
+Start off simple, set all timers to start at 7a and run for 16hrs
+- function will delete all timers, then set them to the same
 
 
 
